@@ -54,10 +54,10 @@ namespace CodeCosmos {
     }
     //% block="spawn dolphin"
     export function spawnDolphin() {
-        player.execute(`execute @v ~ ~ ~ summon tropicaldolphin`)
+        player.execute(`execute @v ~ ~ ~ summon dolphin`)
     }
     //% block="spawn axolotl"
     export function spawnAxolotl() {
-        player.execute(`execute @v ~ ~ ~ summon tropicalaxolotl`)
+        player.execute(`execute @v ~ ~ ~ summon axolotl`)
     }
 }
