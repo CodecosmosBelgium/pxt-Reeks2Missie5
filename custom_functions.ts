@@ -2,8 +2,8 @@
 namespace AgentExtension {
     //% block="agent move forward"
     export function agentMoveForward() {
-        agent.move(FORWARD, 1)
         player.execute(`scoreboard players set @a level_timer 0`)
+        agent.move(FORWARD, 1)
     }
 }
 
@@ -11,6 +11,7 @@ namespace AgentExtension {
 namespace CodeCosmos {
     //% block="is blok %block=block onder agent"
     export function testForBlock_belowAgent(block: number): boolean {
+        player.execute(`scoreboard players set @a level_timer 0`)
         return blocks.testForBlock(block, agent.getPosition().add(world(0, -1, 0)))
     }
 }
