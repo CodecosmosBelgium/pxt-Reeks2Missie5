@@ -9,8 +9,8 @@ namespace AgentExtension {
 
 //% color=190 weight=100 icon="\uf20a" block="CodeCosmos"
 namespace CodeCosmos {
-    //% block="Test block"
-    export function testBlock() {
-        player.execute(`say testblock`)
+    //% block="is blok %block=block onder agent"
+    export function testForBlock_belowAgent(block: number): boolean {
+        return blocks.testForBlock(block, agent.getPosition().add(world(0, -1, 0)))
     }
 }
