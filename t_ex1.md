@@ -4,8 +4,8 @@
 
 ```blocks
 player.onChat("level1", function () {
-    AgentExtension.agentMoveForward()
     for (let index = 0; index < 4; index++) {
+        AgentExtension.agentMoveForward()
         if (CodeCosmos.testForBlock_belowAgent(GRASS) || CodeCosmos.testForBlock_belowAgent(DIRT)) {
             CodeCosmos.placeSand()
             CodeCosmos.placeCoralBlue()
@@ -16,8 +16,8 @@ player.onChat("level1", function () {
 
 ```template
 player.onChat("level1", function () {
-    AgentExtension.agentMoveForward()
     for (let index = 0; index < 4; index++) {
+        AgentExtension.agentMoveForward()
         if (CodeCosmos.testForBlock_belowAgent(GRASS) || CodeCosmos.testForBlock_belowAgent(DIRT)) {
             CodeCosmos.placeSand()
             CodeCosmos.placeCoralBlue()

@@ -10,8 +10,8 @@ player.onChat("level2", function () {
 
 ```template
 player.onChat("level2", function () {
-    AgentExtension.agentMoveForward()
     for (let index = 0; index < 4; index++) {
+        AgentExtension.agentMoveForward()
         if (CodeCosmos.testForBlock_belowAgent(GRASS) || CodeCosmos.testForBlock_belowAgent(DIRT)) {
             AgentExtension.agent360()
             CodeCosmos.placeCoralBlue()
