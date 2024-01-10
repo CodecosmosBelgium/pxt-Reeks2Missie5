@@ -28,36 +28,36 @@ namespace CodeCosmos {
 
     //% block="place blue coral"
     export function placeCoralBlue() {
-        player.execute(`execute at @v run setblock ~ ~ ~ tube_coral`)
+        player.execute(`execute @v ~ ~ ~ setblock ~ ~ ~ tube_coral`)
     }
 
     //% block="place yellow coral"
     export function placeCoralYellow() {
-        player.execute(`execute at @v run setblock ~ ~ ~ horn_coral`)
+        player.execute(`execute @v ~ ~ ~ setblock ~ ~ ~ horn_coral`)
     }
     //% block="place red coral"
     export function placeCoralRed() {
-        player.execute(`execute at @v run setblock ~ ~ ~ fire_coral`)
+        player.execute(`execute @v ~ ~ ~ setblock ~ ~ ~ fire_coral`)
     }
     //% block="place sand"
     export function placeSand() {
-        player.execute(`execute at @v run setblock ~ ~-1 ~ sand`)
+        player.execute(`execute @v ~ ~ ~ setblock ~ ~-1 ~ sand`)
     }
     
     //% block="spawn squid"
     export function spawnSquid() {
-        player.execute(`execute at @v run summon squid`)
+        player.execute(`execute @v ~ ~ ~ summon squid`)
     }
     //% block="spawn fish"
     export function spawnFish() {
-        player.execute(`execute at @v run summon tropicalfish`)
+        player.execute(`execute @v ~ ~ ~ summon tropicalfish`)
     }
     //% block="spawn dolphin"
     export function spawnDolphin() {
-        player.execute(`execute at @v run summon tropicaldolphin`)
+        player.execute(`execute @v ~ ~ ~ summon tropicaldolphin`)
     }
     //% block="spawn axolotl"
     export function spawnAxolotl() {
-        player.execute(`execute at @v run summon tropicalaxolotl`)
+        player.execute(`execute @v ~ ~ ~ summon tropicalaxolotl`)
     }
 }
