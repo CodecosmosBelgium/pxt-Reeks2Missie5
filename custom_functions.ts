@@ -3,6 +3,7 @@ namespace AgentExtension {
     //% block="agent move forward"
     export function agentMoveForward() {
         player.execute(`scoreboard players set @a level_timer 0`)
+        player.execute(`scoreboard players add @a agent_moved 1`)
         agent.move(FORWARD, 1)
     }
 }
