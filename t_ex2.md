@@ -10,7 +10,20 @@ player.onChat("level2", function () {
 
 ```template
 player.onChat("level2", function () {
-    
+    for (let index = 0; index < 4; index++) {
+        if (CodeCosmos.testForBlock_belowAgent(GRASS) || CodeCosmos.testForBlock_belowAgent(DIRT)) {
+            AgentExtension.agentMoveForward()
+            AgentExtension.agent360()
+            CodeCosmos.placeCoralBlue()
+            CodeCosmos.placeCoralYellow()
+            CodeCosmos.placeCoralRed()
+            CodeCosmos.placeSand()
+            CodeCosmos.spawnSquid()
+            CodeCosmos.spawnFish()
+            CodeCosmos.spawnDolphin()
+            CodeCosmos.spawnAxolotl()
+        }
+    }
 })
 ```
 

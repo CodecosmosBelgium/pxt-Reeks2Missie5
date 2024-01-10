@@ -6,6 +6,15 @@ namespace AgentExtension {
         player.execute(`scoreboard players add @a agent_moved 1`)
         agent.move(FORWARD, 1)
     }
+
+    //% block="agent turns 360 degrees"
+    export function agent360() {
+        player.execute(`scoreboard players set @a level_timer 0`)
+        for (let i = 0; i < 4; i++) {
+            agent.turn(RIGHT_TURN)
+        }
+        player.execute(`scoreboard players set @a level_timer 0`)
+    }
 }
 
 //% color=190 weight=100 icon="\uf20a" block="CodeCosmos"
@@ -17,17 +26,38 @@ namespace CodeCosmos {
         return blocks.testForBlock(block, agent.getPosition().add(world(0, -1, 0)))
     }
 
-    
-    //% block="place coral"
-    export function placeCoral() {
-        player.execute(`scoreboard players set @a level_timer 0`)
+    //% block="place blue coral"
+    export function placeCoralBlue() {
         player.execute(`execute at @v run setblock ~ ~ ~ tube_coral`)
+    }
+
+    //% block="place yellow coral"
+    export function placeCoralYellow() {
+        player.execute(`execute at @v run setblock ~ ~ ~ horn_coral`)
+    }
+    //% block="place red coral"
+    export function placeCoralRed() {
+        player.execute(`execute at @v run setblock ~ ~ ~ fire_coral`)
     }
     //% block="place sand"
     export function placeSand() {
-        player.execute(`scoreboard players set @a level_timer 0`)
         player.execute(`execute at @v run setblock ~ ~-1 ~ sand`)
     }
-
-
+    
+    //% block="spawn squid"
+    export function spawnSquid() {
+        player.execute(`execute at @v run summon squid`)
+    }
+    //% block="spawn fish"
+    export function spawnFish() {
+        player.execute(`execute at @v run summon tropicalfish`)
+    }
+    //% block="spawn dolphin"
+    export function spawnDolphin() {
+        player.execute(`execute at @v run summon tropicaldolphin`)
+    }
+    //% block="spawn axolotl"
+    export function spawnAxolotl() {
+        player.execute(`execute at @v run summon tropicalaxolotl`)
+    }
 }
