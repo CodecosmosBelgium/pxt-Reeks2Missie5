@@ -7,15 +7,22 @@ player.onChat("level1", function () {
     for (let index = 0; index < 4; index++) {
         if (Codecosmos.testForBlock_belowAgent(GRASS) || Codecosmos.testForBlock_belowAgent(DIRT)) {
             AgentExtension.agentMoveForward()
+            AgentExtension.placeCoral()
+            AgentExtension.placeSand()
         }
     }
-    
 })
 ```
 
 ```template
 player.onChat("level1", function () {
-    
+    for (let index = 0; index < 4; index++) {
+        if (Codecosmos.testForBlock_belowAgent(GRASS) || Codecosmos.testForBlock_belowAgent(DIRT)) {
+            AgentExtension.agentMoveForward()
+            AgentExtension.placeCoral()
+            AgentExtension.placeSand()
+        }
+    }
 })
 ```
 
