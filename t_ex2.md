@@ -4,26 +4,22 @@
 
 ```blocks
 player.onChat("level2", function () {
-    
+    for (let index = 0; index < 8; index++) {
+        AgentExtension.agentMoveForward()
+        if (CodeCosmos.testForBlock_belowAgent(FIRE_CORAL_BLOCK)) {
+            CodeCosmos.placeCoralRed()
+        } else if (CodeCosmos.testForBlock_belowAgent(HORN_CORAL_BLOCK)) {
+            CodeCosmos.placeCoralYellow()
+        } else {
+            AgentExtension.agent360()
+        }
+    }
 })
 ```
 
 ```template
 player.onChat("level2", function () {
-    for (let index = 0; index < 4; index++) {
-        AgentExtension.agentMoveForward()
-        if (CodeCosmos.testForBlock_belowAgent(GRASS) || CodeCosmos.testForBlock_belowAgent(DIRT)) {
-            AgentExtension.agent360()
-            CodeCosmos.placeCoralBlue()
-            CodeCosmos.placeCoralYellow()
-            CodeCosmos.placeCoralRed()
-            CodeCosmos.placeSand()
-            CodeCosmos.spawnSquid()
-            CodeCosmos.spawnFish()
-            CodeCosmos.spawnDolphin()
-            CodeCosmos.spawnAxolotl()
-        }
-    }
+    
 })
 ```
 

@@ -6,7 +6,7 @@ namespace AgentExtension {
         player.execute(`scoreboard players add @a agent_moved 1`)
         agent.move(FORWARD, 1)
     }
-
+    
     //% block="agent turns 360 degrees"
     export function agent360() {
         player.execute(`scoreboard players set @a level_timer 0`)
@@ -46,18 +46,18 @@ namespace CodeCosmos {
     
     //% block="spawn squid"
     export function spawnSquid() {
-        player.execute(`execute @v ~ ~ ~ summon squid`)
+        player.execute(`execute @v ~ ~1 ~ summon squid`)
     }
     //% block="spawn fish"
     export function spawnFish() {
-        player.execute(`execute @v ~ ~ ~ summon tropicalfish`)
+        player.execute(`execute @v ~ ~1 ~ summon tropicalfish`)
     }
     //% block="spawn dolphin"
     export function spawnDolphin() {
-        player.execute(`execute @v ~ ~ ~ summon dolphin`)
+        player.execute(`execute @v ~ ~1 ~ summon dolphin`)
     }
     //% block="spawn axolotl"
     export function spawnAxolotl() {
-        player.execute(`execute @v ~ ~ ~ summon axolotl`)
+        player.execute(`execute @v ~ ~1 ~ summon axolotl`)
     }
 }
