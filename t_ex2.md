@@ -11,7 +11,7 @@ player.onChat("level2", function () {
         } else if (CodeCosmos.testForBlock_belowAgent(HORN_CORAL_BLOCK)) {
             CodeCosmos.placeCoralYellow()
         } else {
-            AgentExtension.agent360()
+            AgentExtension.agent360_ex2()
         }
     }
 })

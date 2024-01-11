@@ -9,7 +9,7 @@ player.onChat("level4", function () {
         if (CodeCosmos.testForBlock_belowAgent(RED_TERRACOTTA)) {
             CodeCosmos.spawnDolphin()
         } else if (CodeCosmos.testForBlock_belowAgent(SAND)) {
-            AgentExtension.agent360()
+            AgentExtension.agent360_ex4()
         } else {
             CodeCosmos.spawnAxolotl()
         }
