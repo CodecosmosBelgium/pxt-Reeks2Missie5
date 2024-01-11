@@ -11,7 +11,7 @@ player.onChat("level3", function () {
         } else if (CodeCosmos.testForBlock_belowAgent(CLAY)) {
             CodeCosmos.spawnFish()
         } else {
-            player.say("I'm not standing on sand or clay")
+            PlayerExtension.playerSay()
         }
     }
 })
