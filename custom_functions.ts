@@ -1,5 +1,3 @@
-let blockBelowAgent
-
 const wrong = () => {
     player.execute(`execute @c ~ ~ ~ particle rwm:barrier ~ ~1 ~`)
     player.execute(`scoreboard players add @a correctBlocks -100`)
@@ -9,8 +7,8 @@ const wrong = () => {
 namespace PlayerExtension {
     //% block="say something"
     export function playerSay() {
-        blockBelowAgent = agent.getPosition().add(world(0, -1, 0))
-        if (!blocks.testForBlock(SAND, blockBelowAgent) && !blocks.testForBlock(CLAY, blockBelowAgent)) {
+        let posBelowAgent = world(agent.getPosition().getValue(Axis.X), agent.getPosition().getValue(Axis.Y) - 1, agent.getPosition().getValue(Axis.Z))
+        if (!blocks.testForBlock(SAND, posBelowAgent) && !blocks.testForBlock(CLAY, posBelowAgent)) {
             player.execute(`say Not standing on sand or clay`)
             player.execute(`scoreboard players add @a correctBlocks 1`)
         } else {
@@ -31,8 +29,8 @@ namespace AgentExtension {
     
     //% block="agent turn 360 degrees"
     export function agent360_ex2() {
-        blockBelowAgent = agent.getPosition().add(world(0, -1, 0))
-        if (!blocks.testForBlock(FIRE_CORAL_BLOCK, blockBelowAgent) && !blocks.testForBlock(HORN_CORAL_BLOCK, blockBelowAgent)) {
+        let posBelowAgent = world(agent.getPosition().getValue(Axis.X), agent.getPosition().getValue(Axis.Y) - 1, agent.getPosition().getValue(Axis.Z))
+        if (!blocks.testForBlock(FIRE_CORAL_BLOCK, posBelowAgent) && !blocks.testForBlock(HORN_CORAL_BLOCK, posBelowAgent)) {
             for (let i = 0; i < 4; i++) {
                 agent.turn(RIGHT_TURN)
             }
@@ -45,8 +43,8 @@ namespace AgentExtension {
 
     //% block="agent turn 360 degrees"
     export function agent360_ex4() {
-        blockBelowAgent = agent.getPosition().add(world(0, -1, 0))
-        if (!blocks.testForBlock(RED_TERRACOTTA, blockBelowAgent) && !blocks.testForBlock(SAND, blockBelowAgent)) {
+        let posBelowAgent = world(agent.getPosition().getValue(Axis.X), agent.getPosition().getValue(Axis.Y) - 1, agent.getPosition().getValue(Axis.Z))
+        if (!blocks.testForBlock(RED_TERRACOTTA, posBelowAgent) && !blocks.testForBlock(SAND, posBelowAgent)) {
             for (let i = 0; i < 4; i++) {
                 agent.turn(RIGHT_TURN)
             }
@@ -59,8 +57,8 @@ namespace AgentExtension {
     
     //% block="agent turn left"
     export function agent_turn_left() {
-        blockBelowAgent = agent.getPosition().add(world(0, -1, 0))
-        if (blocks.testForBlock(GOLD_BLOCK, blockBelowAgent)) {
+        let posBelowAgent = world(agent.getPosition().getValue(Axis.X), agent.getPosition().getValue(Axis.Y) - 1, agent.getPosition().getValue(Axis.Z))
+        if (blocks.testForBlock(GOLD_BLOCK, posBelowAgent)) {
             agent.turn(LEFT_TURN)
             player.execute(`scoreboard players add @a correctBlocks 1`)
         } else {
@@ -71,8 +69,8 @@ namespace AgentExtension {
     
     //% block="agent turn right"
     export function agent_turn_right() {
-        blockBelowAgent = agent.getPosition().add(world(0, -1, 0))
-        if (blocks.testForBlock(IRON_BLOCK, blockBelowAgent)) {
+        let posBelowAgent = world(agent.getPosition().getValue(Axis.X), agent.getPosition().getValue(Axis.Y) - 1, agent.getPosition().getValue(Axis.Z))
+        if (blocks.testForBlock(IRON_BLOCK, posBelowAgent)) {
             agent.turn(RIGHT_TURN)
             player.execute(`scoreboard players add @a correctBlocks 1`)
         } else {
@@ -88,15 +86,15 @@ namespace CodeCosmos {
     //% block="is block %block=block below agent"
     //% block.shadow=minecraftBlock
     export function testForBlock_belowAgent(block: number): boolean {
-        blockBelowAgent = agent.getPosition().add(world(0, -1, 0))
+        let posBelowAgent = world(agent.getPosition().getValue(Axis.X), agent.getPosition().getValue(Axis.Y) - 1, agent.getPosition().getValue(Axis.Z))
         player.execute(`scoreboard players set @a level_timer 0`)
-        return blocks.testForBlock(block, blockBelowAgent)
+        return blocks.testForBlock(block, posBelowAgent)
     }
 
     //% block="place blue coral"
     export function placeCoralBlue() {
-        blockBelowAgent = agent.getPosition().add(world(0, -1, 0))
-        if (blocks.testForBlock(TUBE_CORAL_BLOCK, blockBelowAgent)) {
+        let posBelowAgent = world(agent.getPosition().getValue(Axis.X), agent.getPosition().getValue(Axis.Y) - 1, agent.getPosition().getValue(Axis.Z))
+        if (blocks.testForBlock(TUBE_CORAL_BLOCK, posBelowAgent)) {
             player.execute(`execute @v ~ ~ ~ setblock ~ ~ ~ tube_coral`)
             player.execute(`scoreboard players add @a correctBlocks 1`)
         } else {
@@ -106,8 +104,8 @@ namespace CodeCosmos {
 
     //% block="place sand"
     export function placeSand() {
-        blockBelowAgent = agent.getPosition().add(world(0, -1, 0))
-        if (!blocks.testForBlock(TUBE_CORAL_BLOCK, blockBelowAgent)) {
+        let posBelowAgent = world(agent.getPosition().getValue(Axis.X), agent.getPosition().getValue(Axis.Y) - 1, agent.getPosition().getValue(Axis.Z))
+        if (!blocks.testForBlock(TUBE_CORAL_BLOCK, posBelowAgent)) {
             player.execute(`execute @v ~ ~ ~ setblock ~ ~-1 ~ sand`)
             player.execute(`scoreboard players add @a correctBlocks 1`)
         } else {
@@ -118,8 +116,8 @@ namespace CodeCosmos {
 
     //% block="place red coral"
     export function placeCoralRed() {
-        blockBelowAgent = agent.getPosition().add(world(0, -1, 0))
-        if (blocks.testForBlock(FIRE_CORAL_BLOCK, blockBelowAgent)) {
+        let posBelowAgent = world(agent.getPosition().getValue(Axis.X), agent.getPosition().getValue(Axis.Y) - 1, agent.getPosition().getValue(Axis.Z))
+        if (blocks.testForBlock(FIRE_CORAL_BLOCK, posBelowAgent)) {
             player.execute(`execute @v ~ ~ ~ setblock ~ ~ ~ fire_coral`)
             player.execute(`scoreboard players add @a correctBlocks 1`)
         } else {
@@ -129,8 +127,8 @@ namespace CodeCosmos {
     
     //% block="place yellow coral"
     export function placeCoralYellow() {
-        blockBelowAgent = agent.getPosition().add(world(0, -1, 0))
-        if (blocks.testForBlock(HORN_CORAL_BLOCK, blockBelowAgent)) {
+        let posBelowAgent = world(agent.getPosition().getValue(Axis.X), agent.getPosition().getValue(Axis.Y) - 1, agent.getPosition().getValue(Axis.Z))
+        if (blocks.testForBlock(HORN_CORAL_BLOCK, posBelowAgent)) {
             player.execute(`execute @v ~ ~ ~ setblock ~ ~ ~ horn_coral`)
             player.execute(`scoreboard players add @a correctBlocks 1`)
         } else {
@@ -141,8 +139,8 @@ namespace CodeCosmos {
     
     //% block="spawn squid"
     export function spawnSquid() {
-        blockBelowAgent = agent.getPosition().add(world(0, -1, 0))
-        if (blocks.testForBlock(SAND, blockBelowAgent)) {
+        let posBelowAgent = world(agent.getPosition().getValue(Axis.X), agent.getPosition().getValue(Axis.Y) - 1, agent.getPosition().getValue(Axis.Z))
+        if (blocks.testForBlock(SAND, posBelowAgent)) {
             player.execute(`execute @v ~ ~1 ~ summon squid`)
             player.execute(`scoreboard players add @a correctBlocks 1`)
         } else {
@@ -152,8 +150,8 @@ namespace CodeCosmos {
 
     //% block="spawn fish"
     export function spawnFish() {
-        blockBelowAgent = agent.getPosition().add(world(0, -1, 0))
-        if (blocks.testForBlock(CLAY, blockBelowAgent)) {
+        let posBelowAgent = world(agent.getPosition().getValue(Axis.X), agent.getPosition().getValue(Axis.Y) - 1, agent.getPosition().getValue(Axis.Z))
+        if (blocks.testForBlock(CLAY, posBelowAgent)) {
             player.execute(`execute @v ~ ~1 ~ summon tropicalfish`)
             player.execute(`scoreboard players add @a correctBlocks 1`)
         } else {
@@ -163,8 +161,8 @@ namespace CodeCosmos {
 
     //% block="spawn dolphin"
     export function spawnDolphin() {
-        blockBelowAgent = agent.getPosition().add(world(0, -1, 0))
-        if (blocks.testForBlock(RED_TERRACOTTA, blockBelowAgent)) {
+        let posBelowAgent = world(agent.getPosition().getValue(Axis.X), agent.getPosition().getValue(Axis.Y) - 1, agent.getPosition().getValue(Axis.Z))
+        if (blocks.testForBlock(RED_TERRACOTTA, posBelowAgent)) {
             player.execute(`execute @v ~ ~1 ~ summon dolphin`)
             player.execute(`scoreboard players add @a correctBlocks 1`)
         } else {
@@ -173,8 +171,8 @@ namespace CodeCosmos {
     }
     //% block="spawn axolotl"
     export function spawnAxolotl() {
-        blockBelowAgent = agent.getPosition().add(world(0, -1, 0))
-        if (!blocks.testForBlock(RED_TERRACOTTA, blockBelowAgent) && !blocks.testForBlock(SAND, blockBelowAgent)) {
+        let posBelowAgent = world(agent.getPosition().getValue(Axis.X), agent.getPosition().getValue(Axis.Y) - 1, agent.getPosition().getValue(Axis.Z))
+        if (!blocks.testForBlock(RED_TERRACOTTA, posBelowAgent) && !blocks.testForBlock(SAND, posBelowAgent)) {
             player.execute(`execute @v ~ ~1 ~ summon axolotl`)
             player.execute(`scoreboard players add @a correctBlocks 1`)
         } else {
@@ -184,8 +182,8 @@ namespace CodeCosmos {
 
     //% block="place purple coral"
     export function placeCoralPurple() {
-        blockBelowAgent = agent.getPosition().add(world(0, -1, 0))
-        if (blocks.testForBlock(BUBBLE_CORAL_BLOCK, blockBelowAgent)) {
+        let posBelowAgent = world(agent.getPosition().getValue(Axis.X), agent.getPosition().getValue(Axis.Y) - 1, agent.getPosition().getValue(Axis.Z))
+        if (blocks.testForBlock(BUBBLE_CORAL_BLOCK, posBelowAgent)) {
             player.execute(`execute @v ~ ~ ~ setblock ~ ~ ~ bubble_coral`)
             player.execute(`scoreboard players add @a correctBlocks 1`)
         } else {
@@ -195,8 +193,8 @@ namespace CodeCosmos {
     
     //% block="spawn turtle"
     export function spawnTurtle() {
-        blockBelowAgent = agent.getPosition().add(world(0, -1, 0))
-        if (!blocks.testForBlock(GOLD_BLOCK, blockBelowAgent) && !blocks.testForBlock(IRON_BLOCK, blockBelowAgent)) {
+        let posBelowAgent = world(agent.getPosition().getValue(Axis.X), agent.getPosition().getValue(Axis.Y) - 1, agent.getPosition().getValue(Axis.Z))
+        if (!blocks.testForBlock(GOLD_BLOCK, posBelowAgent) && !blocks.testForBlock(IRON_BLOCK, posBelowAgent)) {
             player.execute(`execute @v ~ ~1 ~ summon turtle`)
             player.execute(`scoreboard players add @a correctBlocks 1`)
         } else {
