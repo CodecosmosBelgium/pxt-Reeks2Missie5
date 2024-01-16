@@ -3,6 +3,7 @@ const wrong = () => {
     player.execute(`scoreboard players add @a correctBlocks -100`)
 }
 
+
 //% color="#0178D6" weight=100 icon="\uf20a" block="PlayerExtension"
 namespace PlayerExtension {
     //% block="say something"
@@ -55,6 +56,20 @@ namespace AgentExtension {
         player.execute(`scoreboard players set @a level_timer 0`)
     }
     
+    //% block="agent turn 360 degrees"
+    export function agent360_extra2() {
+        let posBelowAgent = world(agent.getPosition().getValue(Axis.X), agent.getPosition().getValue(Axis.Y) - 1, agent.getPosition().getValue(Axis.Z))
+        if (blocks.testForBlock(CLAY, posBelowAgent)) {
+            for (let i = 0; i < 4; i++) {
+                agent.turn(RIGHT_TURN)
+            }
+            player.execute(`scoreboard players add @a correctBlocks 1`)
+        } else {
+            wrong()
+        }
+        player.execute(`scoreboard players set @a level_timer 0`)
+    }
+    
     //% block="agent turn left"
     export function agent_turn_left() {
         let posBelowAgent = world(agent.getPosition().getValue(Axis.X), agent.getPosition().getValue(Axis.Y) - 1, agent.getPosition().getValue(Axis.Z))
@@ -72,6 +87,19 @@ namespace AgentExtension {
         let posBelowAgent = world(agent.getPosition().getValue(Axis.X), agent.getPosition().getValue(Axis.Y) - 1, agent.getPosition().getValue(Axis.Z))
         if (blocks.testForBlock(IRON_BLOCK, posBelowAgent)) {
             agent.turn(RIGHT_TURN)
+            player.execute(`scoreboard players add @a correctBlocks 1`)
+        } else {
+            wrong()
+        }
+        player.execute(`scoreboard players set @a level_timer 0`)
+    }
+    
+    //% block="agent turn right"
+    export function agent_break_down() {
+        let posBelowAgent = world(agent.getPosition().getValue(Axis.X), agent.getPosition().getValue(Axis.Y) - 1, agent.getPosition().getValue(Axis.Z))
+        if (blocks.testForBlock(QUARTZ, posBelowAgent)) {
+            agent.destroy(DOWN)
+            agent.move(DOWN, 1)
             player.execute(`scoreboard players add @a correctBlocks 1`)
         } else {
             wrong()
@@ -113,7 +141,6 @@ namespace CodeCosmos {
         }
     }
 
-
     //% block="place red coral"
     export function placeCoralRed() {
         let posBelowAgent = world(agent.getPosition().getValue(Axis.X), agent.getPosition().getValue(Axis.Y) - 1, agent.getPosition().getValue(Axis.Z))
@@ -135,7 +162,6 @@ namespace CodeCosmos {
             wrong()
         }
     }
-    
     
     //% block="spawn squid"
     export function spawnSquid() {
@@ -169,6 +195,7 @@ namespace CodeCosmos {
             wrong()
         }
     }
+
     //% block="spawn axolotl"
     export function spawnAxolotl() {
         let posBelowAgent = world(agent.getPosition().getValue(Axis.X), agent.getPosition().getValue(Axis.Y) - 1, agent.getPosition().getValue(Axis.Z))
