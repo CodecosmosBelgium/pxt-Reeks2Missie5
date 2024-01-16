@@ -17,7 +17,10 @@ player.onChat("level1", function () {
 
 ```template
 player.onChat("level1", function () {
-    
+    for (let index = 0; index < 6; index++) {
+        AgentExtension.agentMoveForward()
+        
+    }
 })
 ```
 
