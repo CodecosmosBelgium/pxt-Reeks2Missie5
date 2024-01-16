@@ -29,6 +29,7 @@ namespace AgentExtension {
     export function agentMoveForward() {
         player.execute(`scoreboard players set @a level_timer 0`)
         player.execute(`scoreboard players add @a agent_moved 1`)
+        loops.pause(100)
         agent.move(FORWARD, 1)
     }
     
