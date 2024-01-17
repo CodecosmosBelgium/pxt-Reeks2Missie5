@@ -7,7 +7,7 @@ player.onChat("extraLevel2", function () {
     for (let index = 0; index < 12; index++) {
         AgentExtension.agentMoveForward()
         if (CodeCosmos.testForBlock_belowAgent(CLAY)) {
-            CodeCosmos.agent360_extra2()
+            AgentExtension.agent360_extra2()
         } else if (CodeCosmos.testForBlock_belowAgent(GOLD_BLOCK)) {
             AgentExtension.agent_turn_left()
         } else if (CodeCosmos.testForBlock_belowAgent(IRON_BLOCK)) {

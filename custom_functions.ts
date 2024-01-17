@@ -96,7 +96,7 @@ namespace AgentExtension {
     
     //% block="agent turn right"
     export function agent_break_down() {
-        if (testBlock(QUARTZ)) {
+        if (testBlock(BLOCK_OF_QUARTZ)) {
             agent.destroy(DOWN)
             agent.move(DOWN, 1)
             player.execute(`scoreboard players add @a correctBlocks 1`)
