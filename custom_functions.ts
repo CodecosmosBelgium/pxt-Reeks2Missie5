@@ -48,7 +48,7 @@ namespace AgentExtension {
 
     //% block="agent turn 360 degrees"
     export function agent360_ex4() {
-        if (!testBlock(RED_TERRACOTTA) && !testBlock(SAND)) {
+        if (testBlock(SAND)) {
             for (let i = 0; i < 4; i++) {
                 agent.turn(RIGHT_TURN)
             }
