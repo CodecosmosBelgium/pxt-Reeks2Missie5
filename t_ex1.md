@@ -9,7 +9,7 @@ player.onChat("level1", function () {
         if (CodeCosmos.testForBlock_belowAgent(TUBE_CORAL_BLOCK)) {
             CodeCosmos.placeCoralBlue()
         } else {
-            CodeCosmos.placeSand()
+            CodeCosmos.placeSandAndKelp()
         }
     }
 })

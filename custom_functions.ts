@@ -35,7 +35,7 @@ namespace AgentExtension {
     
     //% block="agent turn 360 degrees"
     export function agent360_ex2() {
-        if (!testBlock(FIRE_CORAL_BLOCK) && !testBlock(HORN_CORAL_BLOCK)) {
+        if (!testBlock(GRAVEL) && !testBlock(CRACKED_STONE_BRICKS)) {
             for (let i = 0; i < 4; i++) {
                 agent.turn(RIGHT_TURN)
             }
@@ -121,37 +121,38 @@ namespace CodeCosmos {
     //% block="place blue coral"
     export function placeCoralBlue() {
         if (testBlock(TUBE_CORAL_BLOCK)) {
-            player.execute(`execute @v ~ ~ ~ setblock ~ ~ ~ tube_coral`)
+            player.execute(`function levels/place/tube_coral`)
             player.execute(`scoreboard players add @a correctBlocks 1`)
         } else {
             wrong()
         }
     }
 
-    //% block="place sand"
-    export function placeSand() {
+    //% block="place sand and kelp"
+    export function placeSandAndKelp() {
         if (!testBlock(TUBE_CORAL_BLOCK)) {
             player.execute(`execute @v ~ ~ ~ setblock ~ ~-1 ~ sand`)
+            player.execute(`function levels/place/kelp`)
             player.execute(`scoreboard players add @a correctBlocks 1`)
         } else {
             wrong()
         }
     }
 
-    //% block="place red coral"
-    export function placeCoralRed() {
-        if (testBlock(FIRE_CORAL_BLOCK)) {
-            player.execute(`execute @v ~ ~ ~ setblock ~ ~ ~ fire_coral`)
+    //% block="place sea pickle"
+    export function placeSeaPickle() {
+        if (testBlock(GRAVEL)) {
+            player.execute(`function levels/place/sea_pickle`)
             player.execute(`scoreboard players add @a correctBlocks 1`)
         } else {
             wrong()
         }
     }
     
-    //% block="place yellow coral"
-    export function placeCoralYellow() {
-        if (testBlock(HORN_CORAL_BLOCK)) {
-            player.execute(`execute @v ~ ~ ~ setblock ~ ~ ~ horn_coral`)
+    //% block="place seagrass"
+    export function placeSeagrass() {
+        if (testBlock(CRACKED_STONE_BRICKS)) {
+            player.execute(`function levels/place/seagrass`)
             player.execute(`scoreboard players add @a correctBlocks 1`)
         } else {
             wrong()
@@ -201,7 +202,7 @@ namespace CodeCosmos {
     //% block="place purple coral"
     export function placeCoralPurple() {
         if (testBlock(BUBBLE_CORAL_BLOCK)) {
-            player.execute(`execute @v ~ ~ ~ setblock ~ ~ ~ bubble_coral`)
+            player.execute(`function levels/place/bubble_coral`)
             player.execute(`scoreboard players add @a correctBlocks 1`)
         } else {
             wrong()

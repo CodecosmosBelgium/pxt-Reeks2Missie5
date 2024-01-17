@@ -12,7 +12,7 @@ player.onChat("extraLevel2", function () {
             AgentExtension.agent_turn_left()
         } else if (CodeCosmos.testForBlock_belowAgent(IRON_BLOCK)) {
             AgentExtension.agent_turn_right()
-        } else if (CodeCosmos.testForBlock_belowAgent(QUARTZ)) {
+        } else if (CodeCosmos.testForBlock_belowAgent(BLOCK_OF_QUARTZ)) {
             AgentExtension.agent_break_down()
         } else {
             CodeCosmos.spawnTurtle()
