@@ -25,3 +25,4 @@ player.onChat("level4", function () {
 
 ## Multiple Selection
 Use the learning platform to solve the exercise.
+IF the Agent steps on a block of red terracotta, THEN he spawns a dolphin. ELSE IF he steps on a block of sand, he spins around one time. ELSE he spawns an axolotl.

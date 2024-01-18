@@ -29,3 +29,4 @@ player.onChat("extraLevel2", function () {
 
 ## Multiple Selection
 Use the learning platform to solve the exercise.
+IF the Agent steps on a clay block, THEN he spins one time around. ELSE IF he steps on a gold block, THEN the Agent turns to the left. ELSE IF he steps on an iron block, THEN the Agent turns to the right. ELSE IF the Agent steps on a quartz block, THEN he destroys the block AND goes one down. ELSE he spawns dolphins.

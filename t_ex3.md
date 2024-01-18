@@ -25,3 +25,4 @@ player.onChat("level3", function () {
 
 ## Multiple Selection
 Use the learning platform to solve the exercise.
+IF the Agent steps on a block of sand, THEN he spawns squid. ELSE IF he steps on a block of clay, THEN he spawns a fish. And ELSE he says something.

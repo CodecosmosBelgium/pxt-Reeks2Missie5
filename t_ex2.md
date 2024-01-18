@@ -25,3 +25,4 @@ player.onChat("level2", function () {
 
 ## Multiple Selection
 Use the learning platform to solve the exercise.
+IF the Agent steps on gravel, THEN he places a sea pickle. ELSE IF he steps on a cracked stone brick, THEN he places seagrass. ELSE the Agent spins around one time.
