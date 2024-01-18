@@ -27,4 +27,4 @@ player.onChat("extraLevel1", function () {
 
 ## Multiple Selection
 Use the learning platform to solve the exercise.
-IF the Agent steps on a purple coral block, then he places a purple coral. ELSE IF he steps on a gold block, then the Agent turns left. ELSE IF he steps on an iron block, THEN the Agent turns right. ELSE he spawns a turtle.
+IF the Agent steps on a purple coral block (Bubble Coral Block), then he places a purple coral. ELSE IF he steps on a gold block, then the Agent turns left. ELSE IF he steps on an iron block, THEN the Agent turns right. ELSE he spawns a turtle.

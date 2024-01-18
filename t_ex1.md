@@ -26,4 +26,4 @@ player.onChat("level1", function () {
 
 ## Multiple Selection
 Use the learning platform to solve the exercise.
-IF the Agent steps on a blue coral block, THEN he places a blue coral. ELSE he replaces the block with sand and places kelp.
+IF the Agent steps on a blue coral block (Tube Coral Block), THEN he places a blue coral. ELSE he replaces the block with sand and places kelp.
