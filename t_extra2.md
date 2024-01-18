@@ -15,7 +15,7 @@ player.onChat("extraLevel2", function () {
         } else if (CodeCosmos.testForBlock_belowAgent(BLOCK_OF_QUARTZ)) {
             AgentExtension.agent_break_down()
         } else {
-            CodeCosmos.spawnTurtle()
+            CodeCosmos.spawnDolphin()
         }
     }
 })
