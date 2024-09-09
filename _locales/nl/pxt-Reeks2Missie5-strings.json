@@ -1,0 +1,25 @@
+{
+    "PlayerExtension.playerSay|block": "Zeg iets",
+    "AgentExtension.agentMoveForward|block": "beweeg agent voorwaarts",
+    "AgentExtension.agent360_ex2|block": "draai 360 graden",
+    "AgentExtension.agent360_ex4|block": "draai 360 graden",
+    "AgentExtension.agent360_extra2|block": "draai 360 graden",
+    "AgentExtension.agent_turn_left|block": "agent draai links",
+    "AgentExtension.agent_turn_right|block": "agent draai rechts",
+    "AgentExtension.agent_break_down|block": "agent draai rechts",
+
+    "CodeCosmos.testForBlock_belowAgent|block": "is blok %block=block onder agent",
+    "CodeCosmos.placeCoralBlue|block": "plaats blauw koraal",
+    "CodeCosmos.placeSandAndKelp|block": "plaats zand en kelp",
+    "CodeCosmos.placeSeaPickle|block": "plaats zee augurk",
+
+    "CodeCosmos.placeSeagrass|block": "plaats zeegras",
+    "CodeCosmos.spawnSquid|block": "spawn inkvis",
+    "CodeCosmos.spawnFish|block": "spawn vis",
+    "CodeCosmos.spawnDolphin|block": "spawn dolfijn",
+    "CodeCosmos.spawnAxolotl|block": "spawn axolotl",
+    "CodeCosmos.placeCoralPurple|block": "plaats paars koraal",
+    "CodeCosmos.spawnTurtle|block": "spawn schildpad",
+
+    "{id:category}CodeCosmos": "CodeCosmos"
+  }

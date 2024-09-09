@@ -17,13 +17,14 @@
         "t_extra.md",
         "t_extra2.md",
         "t_no_exercise.md",
-        "_locales/nl/t_no_exercise.md"
+        "_locales/nl/t_no_exercise.md",
+        "_locales/nl/pxt-Reeks2Missie5-strings.json"
     ],
     "testFiles": [
         "test.ts"
     ],
     "targetVersions": {
-        "target": "1.7.25",
+        "target": "1.7.28",
         "targetId": "minecraft"
     },
     "supportedTargets": [
