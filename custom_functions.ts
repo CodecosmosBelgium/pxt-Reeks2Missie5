@@ -12,7 +12,6 @@ const wrong = () => {
 //% color="#0178D6" weight=100 icon="\uf20a" block="PlayerExtension"
 namespace PlayerExtension {
     //% block="say something"
-    //% block.loc.nl="zeg iets"
     export function playerSay() {
         if (!testBlock(SAND) && !testBlock(CLAY)) {
             player.execute(`say Not standing on sand or clay`)
@@ -27,7 +26,6 @@ namespace PlayerExtension {
 //% color="#D83B01" weight=100 icon="\uf20a" block="AgentExtension"
 namespace AgentExtension {
     //% block="agent move forward"
-    //% block.loc.nl="beweeg agent voorwaarts"
     export function agentMoveForward() {
         player.execute(`scoreboard players set @a level_timer 0`)
         player.execute(`scoreboard players add @a agent_moved 1`)
@@ -36,7 +34,6 @@ namespace AgentExtension {
     }
     
     //% block="agent turn 360 degrees"
-    //% block.loc.nl="draai 360 graden"
     export function agent360_ex2() {
         if (!testBlock(GRAVEL) && !testBlock(CRACKED_STONE_BRICKS)) {
             for (let i = 0; i < 4; i++) {
@@ -50,7 +47,6 @@ namespace AgentExtension {
     }
 
     //% block="agent turn 360 degrees"
-    //% block.loc.nl="draai 360 graden"
     export function agent360_ex4() {
         if (testBlock(SAND)) {
             for (let i = 0; i < 4; i++) {
@@ -64,7 +60,6 @@ namespace AgentExtension {
     }
     
     //% block="agent turn 360 degrees"
-    //% block.loc.nl="draai 360 graden"
     export function agent360_extra2() {
         if (testBlock(CLAY)) {
             for (let i = 0; i < 4; i++) {
@@ -78,7 +73,6 @@ namespace AgentExtension {
     }
     
     //% block="agent turn left"
-    //% block.loc.nl="agent draai links"
     export function agent_turn_left() {
         if (testBlock(GOLD_BLOCK)) {
             agent.turn(LEFT_TURN)
@@ -90,7 +84,6 @@ namespace AgentExtension {
     }
     
     //% block="agent turn right"
-    //% block.loc.nl="agent draai rechts"
     export function agent_turn_right() {
         if (testBlock(IRON_BLOCK)) {
             agent.turn(RIGHT_TURN)
@@ -102,7 +95,6 @@ namespace AgentExtension {
     }
     
     //% block="agent turn right"
-    //% block.loc.nl="agent draai rechts"
     export function agent_break_down() {
         if (testBlock(BLOCK_OF_QUARTZ)) {
             agent.destroy(DOWN)
@@ -120,7 +112,6 @@ namespace AgentExtension {
 namespace CodeCosmos {
     //% block="is block %block=block below agent"
     //% block.shadow=minecraftBlock
-    //% block.loc.nl="is blok %block=block onder agent"
     export function testForBlock_belowAgent(block: number): boolean {
         let posBelowAgent = agent.getPosition().add(world(0, -1, 0))
         player.execute(`scoreboard players set @a level_timer 0`)
@@ -128,7 +119,6 @@ namespace CodeCosmos {
     }
 
     //% block="place blue coral"
-    //% block.loc.nl="plaats blauw koraal"
     export function placeCoralBlue() {
         if (testBlock(TUBE_CORAL_BLOCK)) {
             player.execute(`function levels/place/tube_coral`)
@@ -139,7 +129,6 @@ namespace CodeCosmos {
     }
 
     //% block="place sand and kelp"
-    //% block.loc.nl="plaats zand en kelp"
     export function placeSandAndKelp() {
         if (!testBlock(TUBE_CORAL_BLOCK)) {
             player.execute(`execute @v ~ ~ ~ setblock ~ ~-1 ~ sand`)
@@ -151,7 +140,6 @@ namespace CodeCosmos {
     }
 
     //% block="place sea pickle"
-    //% block.loc.nl="plaats zee augurk"
     export function placeSeaPickle() {
         if (testBlock(GRAVEL)) {
             player.execute(`function levels/place/sea_pickle`)
@@ -162,7 +150,6 @@ namespace CodeCosmos {
     }
     
     //% block="place seagrass"
-    //% block.loc.nl="plaats zeegras"
     export function placeSeagrass() {
         if (testBlock(CRACKED_STONE_BRICKS)) {
             player.execute(`function levels/place/seagrass`)
@@ -173,7 +160,6 @@ namespace CodeCosmos {
     }
     
     //% block="spawn squid"
-    //% block.loc.nl="spawn inkvis"
     export function spawnSquid() {
         if (testBlock(SAND)) {
             player.execute(`execute @v ~ ~1 ~ summon squid`)
@@ -184,7 +170,6 @@ namespace CodeCosmos {
     }
 
     //% block="spawn fish"
-    //% block.loc.nl="spawn vis"
     export function spawnFish() {
         if (testBlock(CLAY)) {
             player.execute(`execute @v ~ ~1 ~ summon tropicalfish`)
@@ -195,7 +180,6 @@ namespace CodeCosmos {
     }
 
     //% block="spawn dolphin"
-    //% block.loc.nl="spawn dolfijn"
     export function spawnDolphin() {
         if (testBlock(RED_TERRACOTTA)) {
             player.execute(`execute @v ~ ~1 ~ summon dolphin`)
@@ -206,7 +190,6 @@ namespace CodeCosmos {
     }
 
     //% block="spawn axolotl"
-    //% block.loc.nl="spawn axolotl"
     export function spawnAxolotl() {
         if (!testBlock(RED_TERRACOTTA) && !testBlock(SAND)) {
             player.execute(`execute @v ~ ~1 ~ summon axolotl`)
@@ -217,7 +200,6 @@ namespace CodeCosmos {
     }
 
     //% block="place purple coral"
-    //% block.loc.nl="plaats paars koraal"
     export function placeCoralPurple() {
         if (testBlock(BUBBLE_CORAL_BLOCK)) {
             player.execute(`function levels/place/bubble_coral`)
@@ -228,7 +210,6 @@ namespace CodeCosmos {
     }
     
     //% block="spawn turtle"
-    //% block.loc.nl="spawn schildpad"
     export function spawnTurtle() {
         if (!testBlock(GOLD_BLOCK) && !testBlock(IRON_BLOCK)) {
             player.execute(`execute @v ~ ~1 ~ summon turtle`)
