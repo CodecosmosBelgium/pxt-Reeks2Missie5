@@ -25,7 +25,7 @@ namespace PlayerExtension {
 
 //% color="#D83B01" weight=100 icon="\uf20a" block="AgentExtension"
 namespace AgentExtension {
-    //% block="agent move forward (test)"
+    //% block="agent move forward (test2)"
     export function agentMoveForward() {
         player.execute(`scoreboard players set @a level_timer 0`)
         player.execute(`scoreboard players add @a agent_moved 1`)
